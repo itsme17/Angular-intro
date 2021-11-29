@@ -1,0 +1,20 @@
+<pre>
+  {{ formName.value | json }}
+</pre>
+<form action="" method="post" #formName="ngForm">
+  Firstname : <br>
+  <input type="text" name="fname" #inputName="ngModel" ngModel><br><br>
+  Lastname : <br>
+  <input type="text" name="lname" #inputName="ngModel"ngModel><br><br>
+  Email : <br>
+  <input type="text" name="email" #inputName="ngModel"ngModel><br><br>
+  Phone number : <br>
+  <input type="text" name="phoneNumber" #inputName="ngModel"ngModel><br><br>
+  Favourite language : <br>
+  <select name="favouriteLanguage" #inputName="ngModel"ngModel>
+        <option *ngFor = "let language of languages" value="{{language}}"> {{language}} </option>
+        
+</select><br><br>
+
+<button type="submit"> SEND </button>
+</form>
