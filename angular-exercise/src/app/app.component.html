@@ -35,17 +35,13 @@
   <div class="formgroup">
     <label for="favouriteLanguage"> Favourite language </label><br>
     <select name="favouriteLanguage" class="form-control " required #favouriteLanguage="ngModel"[(ngModel)]="friendModel.favouriteLanguage" [class.is-invalid]="favouriteLanguage.invalid && favouriteLanguage.touched">
-          <option *ngFor = "let language of languages" value="{{language}}"> {{language}} </option>
+          <option *ngFor = "let language of languages" > {{language}} </option>
           
   </select>
   <div class="invalid-feedback">
     Please select your favouriteLanguage.
 </div><br>
 </div>
-  
- 
- 
-
 
 <button type="submit" class="btn btn-primary"> SEND </button>
 </form>
