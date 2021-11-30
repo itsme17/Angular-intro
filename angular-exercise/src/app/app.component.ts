@@ -9,5 +9,5 @@ import { Friend } from './friend';
 export class AppComponent {
   title = 'angular-exercise';
   public languages = ["Html","Css","Java Script","Php" ];
-  friendModel = new Friend("binayak","shrestha","s.binayak@hotmail.com","0472483413","javascript")
+  friendModel = new Friend("binayak","shrestha","s.binayak@hotmail.com","0472483413","javaScript")
 }

@@ -1,22 +1,51 @@
-
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 <form action="" method="post" #formName="ngForm">
   <pre>
     <!-- {{ formName.value | json }} -->
     {{ friendModel | json }}
   </pre>
-  Firstname : <br>
-  <input type="text" name="fname" #inputName="ngModel" [(ngModel)]="friendModel.firstName"><br><br>
-  Lastname : <br>
-  <input type="text" name="lname" #inputName="ngModel"[(ngModel)]="friendModel.lastName"><br><br>
-  Email : <br>
-  <input type="text" name="email" #inputName="ngModel"[(ngModel)]="friendModel.email"><br><br>
-  Phone number : <br>
-  <input type="text" name="phoneNumber" #inputName="ngModel"[(ngModel)]="friendModel.phoneNumber"><br><br>
-  Favourite language : <br>
-  <select name="favouriteLanguage" #inputName="ngModel"[(ngModel)]="friendModel.favouriteLanguage">
-        <option *ngFor = "let language of languages" value="{{language}}"> {{language}} </option>
-        
-</select><br><br>
+  <div class="formgroup">
+    <label for="firstName" class="form-label"> Firstname </label><br>
+    <input type="text" name="fname" class="form-control" required #firstName="ngModel" [(ngModel)]="friendModel.firstName" [class.is-invalid]="firstName.invalid && firstName.touched">
+    <div class="invalid-feedback">
+      Please enter your firstname.
+  </div><br>
+</div>
+  <div class="formgroup">
+    <label for="lastName"> Lastname </label><br>
+    <input type="text" name="lname" class="form-control" required #lastName="ngModel"[(ngModel)]="friendModel.lastName" [class.is-invalid]="lastName.invalid && lastName.touched">
+    <div class="invalid-feedback">
+      Please enter your lastname.
+  </div><br>
+  </div>
+  <div class="formgroup">  
+    <label for="email"> Email </label><br>
+  <input type="text" name="email" class="form-control" required #email="ngModel"[(ngModel)]="friendModel.email" [class.is-invalid]="email.invalid && email.touched" >
+  <div class="invalid-feedback">
+    Please enter your email.
+</div><br>
+</div>
+  <div class="formgroup">
+    <label for="phoneNumber"> Phone number </label><br>
+    <input type="text" name="phoneNumber" class="form-control" required #phoneNumber="ngModel"[(ngModel)]="friendModel.phoneNumber" [class.is-invalid]="phoneNumber.invalid && phoneNumber.touched">
+    <div class="invalid-feedback">
+      Please enter your phoneNumber.
+  </div><br>
+  </div>
+  <div class="formgroup">
+    <label for="favouriteLanguage"> Favourite language </label><br>
+    <select name="favouriteLanguage" class="form-control " required #favouriteLanguage="ngModel"[(ngModel)]="friendModel.favouriteLanguage" [class.is-invalid]="favouriteLanguage.invalid">
+          <option *ngFor = "let language of languages" value="{{language}}"> {{language}} </option>
+          
+  </select>
+  <div class="invalid-feedback">
+    Please select your favouriteLanguage.
+</div><br>
+</div>
+  
+ 
+ 
 
-<button type="submit"> SEND </button>
+
+<button type="submit" class="btn btn-primary"> SEND </button>
 </form>
