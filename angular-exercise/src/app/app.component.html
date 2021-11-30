@@ -6,35 +6,35 @@
   </pre>
   <div class="formgroup">
     <label for="firstName" class="form-label"> Firstname </label><br>
-    <input type="text" name="fname" class="form-control" required #firstName="ngModel" [(ngModel)]="friendModel.firstName" [class.is-invalid]="firstName.invalid && firstName.touched">
+    <input type="text" name="fname" class="form-control" required #firstName="ngModel" [(ngModel)]="friendModel.firstName" [class.is-invalid]="firstName.invalid && firstName.touched" pattern="^[a-zA-Z,'.\-\s]+$">
     <div class="invalid-feedback">
-      Please enter your firstname.
+      Please enter your valid firstname.
   </div><br>
 </div>
   <div class="formgroup">
     <label for="lastName"> Lastname </label><br>
-    <input type="text" name="lname" class="form-control" required #lastName="ngModel"[(ngModel)]="friendModel.lastName" [class.is-invalid]="lastName.invalid && lastName.touched">
+    <input type="text" name="lname" class="form-control" required #lastName="ngModel"[(ngModel)]="friendModel.lastName" [class.is-invalid]="lastName.invalid && lastName.touched" pattern="^[a-zA-Z,'.\-\s]+$">
     <div class="invalid-feedback">
-      Please enter your lastname.
+      Please enter your valid lastname.
   </div><br>
   </div>
   <div class="formgroup">  
     <label for="email"> Email </label><br>
-  <input type="text" name="email" class="form-control" required #email="ngModel"[(ngModel)]="friendModel.email" [class.is-invalid]="email.invalid && email.touched" >
+  <input type="text" name="email" class="form-control" required #email="ngModel"[(ngModel)]="friendModel.email" [class.is-invalid]="email.invalid && email.touched" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
   <div class="invalid-feedback">
-    Please enter your email.
+    Please enter your valid email.
 </div><br>
 </div>
   <div class="formgroup">
     <label for="phoneNumber"> Phone number </label><br>
-    <input type="text" name="phoneNumber" class="form-control" required #phoneNumber="ngModel"[(ngModel)]="friendModel.phoneNumber" [class.is-invalid]="phoneNumber.invalid && phoneNumber.touched">
+    <input type="text" name="phoneNumber" class="form-control" required #phoneNumber="ngModel"[(ngModel)]="friendModel.phoneNumber" [class.is-invalid]="phoneNumber.invalid && phoneNumber.touched" pattern="^\d{10}$">
     <div class="invalid-feedback">
-      Please enter your phoneNumber.
+      Please enter your valid phoneNumber.
   </div><br>
   </div>
   <div class="formgroup">
     <label for="favouriteLanguage"> Favourite language </label><br>
-    <select name="favouriteLanguage" class="form-control " required #favouriteLanguage="ngModel"[(ngModel)]="friendModel.favouriteLanguage" [class.is-invalid]="favouriteLanguage.invalid">
+    <select name="favouriteLanguage" class="form-control " required #favouriteLanguage="ngModel"[(ngModel)]="friendModel.favouriteLanguage" [class.is-invalid]="favouriteLanguage.invalid && favouriteLanguage.touched">
           <option *ngFor = "let language of languages" value="{{language}}"> {{language}} </option>
           
   </select>
