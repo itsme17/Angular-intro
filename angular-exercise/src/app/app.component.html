@@ -44,4 +44,13 @@
 </div>
 
 <button type="submit" class="btn btn-primary" [disabled]="formName.form.invalid"> SEND </button>
+
+<pre *ngFor="let friend of allFriends; ">
+  <h3>{{friend.firstName}} {{friend.lastName}}</h3>
+  <p>Email: {{friend.email}} </p>
+  <p>Phone number: {{friend.phoneNumber}}</p>
+  <p>Favourite language:  {{friend.favouriteLanguage}} </p>
+  <hr>
+  
+</pre>
 </form>

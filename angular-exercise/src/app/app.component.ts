@@ -15,4 +15,17 @@ export class AppComponent {
   onSubmit(){
     this.addFriendService.addFriend(this.friendModel).subscribe(data =>" it worked ", error => " it didn't work ")
   }
+
+  ngOnInit(): void {
+    this.showFriends();
+  }
+
+
+  allFriends:any
+  async showFriends(): Promise<void> {
+    let friendApi = await fetch ("http://localhost:9001/allFriends", {headers: {
+      'Content-Type': 'application/json'}});
+      this.allFriends = await friendApi.json();
+  }
+
 }
