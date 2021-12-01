@@ -10,7 +10,7 @@ import { Friend } from './friend';
 export class AppComponent {
   constructor(private addFriendService:AddFriendService){}
   title = 'angular-exercise';
-  public languages = ["Html","Css","Java Script","Php" ];
+  public languages = ["","Html","Css","Java Script","Php" ];
   friendModel = new Friend("","","","","");
   onSubmit(){
     this.addFriendService.addFriend(this.friendModel).subscribe(data =>" it worked ", error => " it didn't work ")
