@@ -12,3 +12,10 @@ select{
     width: 12%;
     margin: 0 auto;
 }
+.alert-danger{
+    padding: 20px;
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 10px;
+    border-radius: 10px;
+}
