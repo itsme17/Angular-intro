@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AddFriendService } from './add-friend.service';
 import { Friend } from './friend';
 
 @Component({
@@ -7,10 +8,11 @@ import { Friend } from './friend';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  constructor(private addFriendService:AddFriendService){}
   title = 'angular-exercise';
   public languages = ["Html","Css","Java Script","Php" ];
   friendModel = new Friend("","","","","");
   onSubmit(){
-    console.log(this.friendModel);
+    this.addFriendService.addFriend(this.friendModel).subscribe(data =>" it worked ", error => " it didn't work ")
   }
 }
